@@ -1,18 +1,19 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
     namespace 'com.kevinhomorales.navigationcomponentkotlin'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.kevinhomorales.navigationcomponentkotlin"
         minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        targetSdk 34
+        versionCode 100
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -30,9 +31,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+    // NAV COMPONENT
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.6'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.6'
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
